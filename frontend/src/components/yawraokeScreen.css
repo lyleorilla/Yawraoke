@@ -1,0 +1,30 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.097);
+    padding: 2rem;
+    border-radius: 30px;
+    color: black;
+    font-size: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.word-box {
+    margin-left: 1rem;
+
+
+}
+
+.word-box p {
+    font-family: sans-serif;
+    color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 1.5px black;
+    letter-spacing: 3px;
+    background-image: linear-gradient(to right, rgb(251, 255, 0) 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-position 5s linear;
+    width: fit-content;
+}

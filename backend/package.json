@@ -11,6 +11,8 @@
     "dev": "node --watch --env-file=.env audioTranscript.js"
   },
   "dependencies": {
+    "@deepgram/sdk": "^5.2.0",
+    "@gradio/client": "^2.2.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "groq-sdk": "^1.2.0",

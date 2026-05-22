@@ -1,11 +1,20 @@
 import './App.css'
-import InsertBtn from './components/InsertBtn'
+import AudioUploader from './components/AudioUploader'
+import { AudioProvider } from './components/AudioContext'
+import AudioFiltering from './components/AudioFiltering'
+import YawraokeScreen from './components/YawraokeScreen'
+import AudioController from './components/AudioController'
 
 function App() {
   return (
     <>
-      helloasfas
-      <InsertBtn />
+      <YawraokeScreen />
+      <AudioProvider>
+        <AudioUploader />
+        <AudioFiltering />
+        <AudioController />
+
+      </AudioProvider>
     </>
   )
 }
