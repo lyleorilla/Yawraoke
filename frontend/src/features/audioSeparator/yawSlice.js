@@ -2,13 +2,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import yawService from "./yawService"
 
 const initialState = {
-    audio: null,
-    vocals: null,
-    instrumentals: null,
+    musicName: [],
+    audio: [],
+    vocals: [],
+    instrumentals: [],
     segments: [],
     paragraphs: [],
     data: [],
-    loading: false
+    loading: false,
+    songIndex: null
 }
 
 
@@ -30,16 +32,29 @@ const yawraokeSlice = createSlice({
     initialState,
     reducers: {
         reset: (state) => {
-            state.audio = null
-            state.vocals = null
-            state.instrumentals = null
+            state.audio = []
+            state.vocals = []
+            state.instrumentals = []
             state.segments = []
             state.paragraphs = []
             state.data = []
-            state.loading = false
+            state.loading = []
+            state.totalPlaylist = null
         },
         setAudio: (state, action) => {
             state.audio = action.payload
+        },
+        nextSong: (state) => {
+            if (state.songIndex === null) return
+            state.songIndex = (state.songIndex + 1) % state.vocals.length
+        },
+        prevSong: (state) => {
+            if (state.songIndex === null) return
+            state.songIndex = (state.songIndex - 1 + state.vocals.length) % state.vocals.length
+
+        },
+        setName: (state, action) => {
+            state.musicName.push(action.payload)
         }
     },
     extraReducers: (builder) => {
@@ -49,12 +64,15 @@ const yawraokeSlice = createSlice({
         builder.addCase(audioSeparator.fulfilled, (state, action) => {
             console.log("Redux audioSeparator.fulfilled payload:", action.payload)
             state.loading = false
-            state.vocals = action.payload.vocalsUrl
-            state.instrumentals = action.payload.backgroundUrl
-            state.segments = action.payload.segments
+            state.vocals.push(action.payload.vocalsUrl)
+            state.instrumentals.push(action.payload.backgroundUrl)
+            state.segments.push(action.payload.segments)
             console.log("Paragraphs: ", action.payload.paragraphs)
-            state.paragraphs = action.payload.paragraphs
-            state.data = action.payload.data
+            state.paragraphs.push(action.payload.paragraphs)
+            state.data.push(action.payload.data)
+            state.songIndex = (state.vocals.length - 1)
+            state.totalPlaylist = (state.vocals.length)
+
         })
         builder.addCase(audioSeparator.rejected, (state) => {
             state.loading = false
@@ -62,5 +80,5 @@ const yawraokeSlice = createSlice({
     }
 })
 
-export const { reset, setAudio } = yawraokeSlice.actions
+export const { reset, setAudio, nextSong, prevSong, setName } = yawraokeSlice.actions
 export default yawraokeSlice.reducer

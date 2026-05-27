@@ -2,10 +2,11 @@ import { faFileAudio } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useContext } from "react"
 import { AudioFileContext } from "./AudioContext.jsx"
-
-import "../components/insertBtn.css"
+import { useSelector } from "react-redux"
+import "./audioController.css"
 
 const AudioUploader = () => {
+    const { musicName, songIndex, totalPlaylist } = useSelector((state) => state.yawraoke)
     const { audioFile, setAudioFile } = useContext(AudioFileContext)
 
     const handleFileChange = e => {
@@ -17,7 +18,7 @@ const AudioUploader = () => {
 
     return (
         <>
-            <div className="upload-container">
+            <div className="audio-uploader">
                 <label htmlFor="file-upload" className="file-upload">
                     <FontAwesomeIcon icon={faFileAudio} />
                     <span className="insert-text">insert mp3</span>

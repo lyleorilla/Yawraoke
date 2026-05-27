@@ -1,30 +1,44 @@
 .container {
-    background-color: rgba(0, 0, 0, 0.097);
-    padding: 2rem;
+    background-color: antiquewhite;
     border-radius: 30px;
     color: black;
+    box-shadow: .3rem .3rem .1rem rgba(0, 0, 0, 0.859);
     font-size: 3rem;
     display: flex;
     flex-wrap: wrap;
+    height: 15rem;
+    overflow: hidden;
+    margin: 5rem;
+    border: solid .3rem black;
+    padding: .5rem 0rem 0rem .5rem;
+    align-content: flex-start;
+
 }
 
 .word-box {
-    margin-left: 1rem;
-
-
-}
-
-.word-box p {
-    font-family: sans-serif;
-    color: transparent;
-    font-weight: 900;
-    -webkit-text-stroke: 1.5px black;
-    letter-spacing: 3px;
-    background-image: linear-gradient(to right, rgb(251, 255, 0) 50%, transparent 50%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    transition: background-position 5s linear;
+    height: calc(100% / 3);
     width: fit-content;
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-left: 1rem;
+        font-family: sans-serif;
+        color: transparent;
+        font-weight: 900;
+        -webkit-text-stroke: 2px black;
+        letter-spacing: 3px;
+        background-image: linear-gradient(to right, #fffb00 50%, rgba(0, 0, 0, 0.547) 50%);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        width: fit-content;
+    }
+
+    &.hidden {
+        display: none;
+    }
+
 }

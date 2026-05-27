@@ -98,7 +98,9 @@ app.post('/api/separate', diskUpload.single("audioFile"), async (req, res) => {
             segments: words,
             paragraphs: paragraphs,
             vocalsUrl: `http://localhost:5000/separated/htdemucs/${safeFolderName}/vocals.mp3`,
-            backgroundUrl: `http://localhost:5000/separated/htdemucs/${safeFolderName}/no_vocals.mp3`
+            backgroundUrl: `http://localhost:5000/separated/htdemucs/${safeFolderName}/no_vocals.mp3`,
+            musicName: safeFolderName.replace(".mp3", "")
+
         });
     });
 });

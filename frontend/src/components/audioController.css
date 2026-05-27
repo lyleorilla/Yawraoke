@@ -1,0 +1,60 @@
+.audio-uploader {
+    padding: 1.5rem;
+    margin: 1rem;
+
+    background-color: antiquewhite;
+    width: fit-content;
+    border-radius: 2rem;
+    border: .3rem solid black;
+    box-shadow: .3rem .3rem .1rem rgba(0, 0, 0, 0.859);
+    cursor: pointer;
+
+    .file-upload {
+        cursor: inherit;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        display: flex;
+        flex-direction: column;
+
+        .insert-text {
+            font-size: 1.2rem;
+            font-weight: 900;
+        }
+    }
+
+    &:hover {
+        transform: translate(.05rem, .05rem);
+        box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, 0.859);
+    }
+
+    &:active {
+        transform: translate(.2rem, .2rem);
+        box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, 0.859);
+
+    }
+}
+
+.btn-designed {
+    padding: .5rem 1rem .5rem 1rem;
+    background-color: antiquewhite;
+    border-radius: 2rem;
+    border: .3rem solid black;
+    box-shadow: .3rem .3rem .1rem rgba(0, 0, 0, 0.859);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: .5rem;
+
+    &:hover {
+        transform: translate(.05rem, .05rem);
+        box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, 0.859);
+    }
+
+    &:active {
+        transform: translate(.2rem, .2rem);
+        box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, 0.859);
+
+    }
+}

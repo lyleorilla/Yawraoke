@@ -10,9 +10,9 @@ function App() {
     <>
       <YawraokeScreen />
       <AudioProvider>
-        <AudioUploader />
         <AudioFiltering />
         <AudioController />
+        <AudioUploader />
 
       </AudioProvider>
     </>
