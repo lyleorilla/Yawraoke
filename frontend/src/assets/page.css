@@ -1,0 +1,39 @@
+.karaoke-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.lyric-stage {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 70%;
+    height: 70vh;
+    border-radius: 20px;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        display: block;
+    }
+}
+
+.controller-panel {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 30%;
+    height: 70vh;
+    border-radius: 20px;
+    padding: 2rem;
+
+
+    @media (max-width: 768px) {
+        width: 100%;
+        display: block;
+    }
+}
